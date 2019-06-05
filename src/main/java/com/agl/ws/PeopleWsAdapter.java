@@ -25,9 +25,9 @@ public class PeopleWsAdapter {
         People[] peopleArray = new People[0];
         try {
             peopleArray = objectMapper.readValue(new URL(webServiceEndPointUrl), People[].class);
-            logger.debug("Data received from the webservice"+peopleArray);
+            logger.debug("Data received from the webservice" + peopleArray);
         } catch (Exception e) {
-            logger.debug("An exception occurred to fetch the webservice details:"+e.getStackTrace());
+            logger.debug("An exception occurred to fetch the webservice details:" + e.getStackTrace());
         }
         return peopleArray;
     }

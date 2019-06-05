@@ -25,18 +25,17 @@ import java.util.Map;
 @ContextConfiguration()
 public class PeopleServiceTest {
 
+    @InjectMocks
+    private PeopleService peopleService;
+    @Mock
+    private PeopleWsAdapter peopleWsAdapter;
+
     @Before
     public void setup() {
         People[] resultsArray = new People[1];
         resultsArray[0] = getPeopleData();
         Mockito.when(peopleWsAdapter.fetchPersonDetails()).thenReturn(resultsArray);
     }
-
-    @InjectMocks
-    private PeopleService peopleService;
-
-    @Mock
-    private PeopleWsAdapter peopleWsAdapter;
 
     @Test
     public void testGetPeopleData() {

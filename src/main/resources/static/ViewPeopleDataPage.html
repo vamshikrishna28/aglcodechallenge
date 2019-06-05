@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>People Data Application</title>
     <script>
-        window.onload = function() {
+        window.onload = function () {
             var xhttp = new XMLHttpRequest();
             xhttp.open("GET", "http://localhost:8080/api/people", true);
             xhttp.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
@@ -23,27 +23,27 @@
                         var responseResult = JSON.parse(xhttp.responseText);
                         var divElement = document.getElementById("resultset");
                         divElement.appendChild(document.createElement("h5")).innerHTML = "Male";
-                        displayResults(responseResult.Male,divElement);
+                        displayResults(responseResult.Male, divElement);
                         divElement.appendChild(document.createElement("h5")).innerHTML = "Female";
-                        displayResults(responseResult.Female,divElement);
+                        displayResults(responseResult.Female, divElement);
 
                     }
                 }
             };
-            xhttp.onreadystatechange = function() {
+            xhttp.onreadystatechange = function () {
                 if (xhttp.status === 404) {
                     var divElement = document.getElementById("resultset");
                     divElement.innerHTML = "There seems to be an issue with getting the response at this time";
                 }
             };
-                xhttp.send();
+            xhttp.send();
         };
     </script>
 </head>
 <body>
 <h4>View People Data</h4>
 <br>
-    <div id="resultset">
-    </div>
+<div id="resultset">
+</div>
 </body>
 </html>

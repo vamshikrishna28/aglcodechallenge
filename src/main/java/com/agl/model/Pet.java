@@ -1,11 +1,10 @@
-
 package com.agl.model;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.util.Objects;
 
-public class Pet{
+public class Pet {
 
     @JsonSerialize
     private String name;

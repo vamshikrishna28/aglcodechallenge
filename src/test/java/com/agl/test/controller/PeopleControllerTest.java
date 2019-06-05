@@ -21,7 +21,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -31,7 +32,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @RunWith(SpringRunner.class)
 @WebMvcTest(PeopleController.class)
-@ContextConfiguration(classes={PeopleApplication.class})
+@ContextConfiguration(classes = {PeopleApplication.class})
 public class PeopleControllerTest {
 
     private static final Logger logger = LogManager.getLogger(PeopleControllerTest.class);
@@ -50,7 +51,7 @@ public class PeopleControllerTest {
         mvc.perform(get("/api/people"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-                .andExpect(jsonPath("$",is(notNullValue())));
+                .andExpect(jsonPath("$", is(notNullValue())));
 
         verify(peopleService, times(1)).fetchPeopleData();
     }
@@ -65,4 +66,4 @@ public class PeopleControllerTest {
         results.put("Male", pets);
         return results;
     }
-    }
+}

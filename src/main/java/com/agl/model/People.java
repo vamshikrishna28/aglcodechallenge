@@ -1,11 +1,10 @@
-
 package com.agl.model;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 
 public class People {

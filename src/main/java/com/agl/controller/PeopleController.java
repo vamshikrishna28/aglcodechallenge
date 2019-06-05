@@ -21,16 +21,16 @@ public class PeopleController {
     private static final Logger logger = LogManager.getLogger(PeopleController.class);
 
     @Autowired
-    private PeopleService  peopleService;
+    private PeopleService peopleService;
 
-    @GetMapping("/people" )
-    public ResponseEntity<?> getCreditCard(){
+    @GetMapping("/people")
+    public ResponseEntity<?> getPeopleData() {
         Map<String, Set<Pet>> resultMap = peopleService.fetchPeopleData();
 
-        if(resultMap.isEmpty()) {
+        if (resultMap.isEmpty()) {
             logger.debug("No data returned from the service");
             return new ResponseEntity<>("Sorry unable to fetch People Data!!!!", HttpStatus.NOT_FOUND);
-        }else
+        } else
             return new ResponseEntity<>(resultMap, HttpStatus.OK);
     }
 }
