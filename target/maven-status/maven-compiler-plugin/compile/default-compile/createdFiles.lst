@@ -1,9 +1,0 @@
-com/agl/app/ServletInitializer.class
-com/agl/model/People.class
-com/agl/controller/PeopleController.class
-com/agl/service/PeopleService.class
-com/agl/comparator/PetComparator.class
-com/agl/app/PeopleApplication.class
-com/agl/model/Pet.class
-com/agl/security/SecurityConfig.class
-com/agl/ws/PeopleWsAdapter.class
